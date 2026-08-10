@@ -1,0 +1,9 @@
+ollama
+requests
+beautifulsoup4
+lxml
+chromadb
+sentence-transformers
+gradio
+python-dotenv
+tqdm
