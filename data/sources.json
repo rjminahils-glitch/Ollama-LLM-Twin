@@ -2,9 +2,22 @@
   "author": "Minahil",
   "sources": [
     {
-      "type": "repository",
-      "url": "https://github.com/rjminahils-glitch/Ollama-LLM-Twin",
-      "written_by_me": true
+      "type": "dataset",
+      "name": "NUML Data Collection Sheet - Knowledge Tab",
+      "description": "Factual statements about NUML university (admissions, fees, programs, hostel, transport, scholarships, faculty, campus), collected by a team of students for the Memory Track of the LLM twin.",
+      "url": "https://docs.google.com/spreadsheets/d/1ojp0xtyhmcKje6YAm0ifqCnxmkYvHv4S/edit",
+      "sheet_tab": "knowledge",
+      "written_by_me": false,
+      "contributors": ["Minahil", "Mashal", "Hassan", "Sara"]
+    },
+    {
+      "type": "dataset",
+      "name": "NUML Data Collection Sheet - Instructions Tab",
+      "description": "Question and answer pairs in an agreed voice, used for the Style Track of the LLM twin.",
+      "url": "https://docs.google.com/spreadsheets/d/1ojp0xtyhmcKje6YAm0ifqCnxmkYvHv4S/edit",
+      "sheet_tab": "instructions",
+      "written_by_me": false,
+      "contributors": ["Minahil", "Mashal", "Hassan", "Sara"]
     }
   ]
 }
