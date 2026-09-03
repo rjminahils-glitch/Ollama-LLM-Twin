@@ -5,6 +5,7 @@
 - **Chapter 3** — Sampling controls (temperature/top_p/num_predict), streaming responses (`ask_stream()`), conversation memory (`Chat` class with `send()`/`reset()`)
 - **Chapter 4** — Data collection: defined Memory Track (factual knowledge) vs Style Track (Q&A voice pairs), researched and wrote entries across admissions, fees, programs, hostel, transport, scholarships, faculty, and campus from official NUML sources, built `data/sources.json` cataloging the dataset
 - **Chapter 5** — ETL pipeline: built `src/loaders.py`, `src/validate.py`, `src/build.py` to extract the NUML workbook, validate every entry (length, category, referential integrity), and load clean `data/clean/knowledge.jsonl` / `instructions.jsonl`. All 135 knowledge entries and 135 instruction pairs pass validation with 0 errors.
+- **Chapter 6** — Chunking: built `src/chunk.py` and `src/build_chunks.py` to split knowledge entries into retrieval-sized chunks with sentence-boundary overlap, enrich each chunk's embed text with category context, and carry `chunk_id`/`source_id` for traceability back to the original spreadsheet row. 135 entries produced 135 chunks (none needed splitting).
 
 See the `CHAPTER*_OLLAMA_NOTES.md` files for detailed notes on each chapter.
 
@@ -26,4 +27,4 @@ ollama pull llama3.2:3b
 
 ## Status
 
-Work in progress — following a chapter-by-chapter course structure. Chapters 1–5 complete, awaiting Chapter 6.
+Work in progress — following a chapter-by-chapter course structure. Chapters 1–6 complete, awaiting Chapter 7.
