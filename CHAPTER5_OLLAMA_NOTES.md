@@ -83,3 +83,11 @@ integrity, provenance.
 40-word minimum), fixed by expanding the sheet content, re-verified with a
 clean 0 errors / 0 warnings run, confirmed deterministic across repeated runs.
 Not yet pushed to GitHub — will push together with Chapter 4.
+
+## Update: the sheet's own column headers specify 100-300 words for knowledge
+text and 60-150 words for instruction output — a stricter bar than the
+40-word floor above. `validate.py` was updated to enforce MIN_KNOWLEDGE_WORDS
+= 100, MAX_KNOWLEDGE_WORDS = 300, MIN_ANSWER_WORDS = 60, MAX_ANSWER_WORDS =
+150, and every knowledge entry and instruction answer was expanded again to
+meet this tighter spec. Re-verified clean at 0 errors / 0 warnings against
+the new thresholds.

@@ -66,13 +66,14 @@ spreadsheet row -> the student who wrote it. Without this, a bug is just
 
 ## Verified working
 Ran `python -m src.build_chunks` against the real, already-fixed
-`knowledge.jsonl` (135 entries, all 40-99 words after Chapter 5's length
-fixes): produced exactly 135 chunks — none needed splitting, since every
-entry is well under the 220-word `MAX_WORDS` threshold. No "short entry"
-notes either, since Chapter 5's 40-word minimum is already above this
-chapter's 15-word `SHORT_WORDS` flag. Spot-checked 3 example chunks and
-confirmed `embed_text` correctly prepends the category context sentence
-(e.g. "NUML admissions, eligibility and entry test.") before the fact.
+`knowledge.jsonl` (135 entries, 101-186 words each after the sheet-spec
+expansion — see the Chapter 5 update note): produced exactly 135 chunks —
+none needed splitting, since every entry is well under the 220-word
+`MAX_WORDS` threshold. No "short entry" notes either, since the current
+100-word minimum is already above this chapter's 15-word `SHORT_WORDS`
+flag. Spot-checked 3 example chunks and confirmed `embed_text` correctly
+prepends the category context sentence (e.g. "NUML admissions, eligibility
+and entry test.") before the fact.
 
 ## Steps to run this for real
 1. No new pip installs needed this chapter
