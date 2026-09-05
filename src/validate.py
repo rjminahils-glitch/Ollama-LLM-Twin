@@ -5,10 +5,10 @@ from collections import Counter
 CATEGORIES = {"admissions", "fees", "programs", "hostel",
               "transport", "scholarships", "faculty", "campus"}
 
-MIN_KNOWLEDGE_WORDS = 40
-MAX_KNOWLEDGE_WORDS = 350
-MIN_ANSWER_WORDS = 40
-MAX_ANSWER_WORDS = 200
+MIN_KNOWLEDGE_WORDS = 100
+MAX_KNOWLEDGE_WORDS = 300
+MIN_ANSWER_WORDS = 60
+MAX_ANSWER_WORDS = 150
 
 FALLBACKS = {"not recorded", "unknown", "untitled"}
 
