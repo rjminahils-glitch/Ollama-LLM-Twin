@@ -7,6 +7,7 @@ class Chat:
 
     def __init__(self, system: str | None = None, model: str = DEFAULT_MODEL):
         self.model = model
+        self.system = system
         self.messages = []
         if system:
             self.messages.append({"role": "system", "content": system})
@@ -25,4 +26,4 @@ class Chat:
         return reply
 
     def reset(self):
-        self.messages = self.messages[:1] if self.messages else []
+        self.messages = [{"role": "system", "content": self.system}] if self.system else []
