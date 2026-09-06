@@ -7,6 +7,7 @@
 - **Chapter 5** — ETL pipeline: built `src/loaders.py`, `src/validate.py`, `src/build.py` to extract the NUML workbook, validate every entry (length, category, referential integrity), and load clean `data/clean/knowledge.jsonl` / `instructions.jsonl`. All 135 knowledge entries and 135 instruction pairs pass validation with 0 errors.
 - **Chapter 6** — Chunking: built `src/chunk.py` and `src/build_chunks.py` to split knowledge entries into retrieval-sized chunks with sentence-boundary overlap, enrich each chunk's embed text with category context, and carry `chunk_id`/`source_id` for traceability back to the original spreadsheet row. 135 entries produced 135 chunks (none needed splitting).
 - **Post-Chapter 6 fix** — found that `validate.py`'s 40-word minimum was looser than the sheet's own column-header spec (100-300 words for knowledge text, 60-150 for instruction output); tightened the validator to match, then expanded all 135 knowledge entries and 135 instruction answers to genuinely meet it. Re-verified clean at 0 errors, 0 warnings, 135 chunks.
+- **Chapter 7** — Embeddings: built `src/embedder.py`, `src/build_embeddings.py`, and `src/try_search.py` to embed all 135 chunks with `sentence-transformers/all-MiniLM-L6-v2` (384-dim, normalized so cosine similarity == dot product) and verify semantic search against 6 sample queries. Confirmed `dim=384`, `max_seq_length=256`, vector norms = 1.0000, and every sample query retrieved the correct category despite little or no word overlap with the matching chunk.
 
 See the `CHAPTER*_OLLAMA_NOTES.md` files for detailed notes on each chapter.
 
@@ -28,4 +29,4 @@ ollama pull llama3.2:3b
 
 ## Status
 
-Work in progress — following a chapter-by-chapter course structure. Chapters 1–6 complete, awaiting Chapter 7.
+Work in progress — following a chapter-by-chapter course structure. Chapters 1–7 complete, awaiting Chapter 8.
